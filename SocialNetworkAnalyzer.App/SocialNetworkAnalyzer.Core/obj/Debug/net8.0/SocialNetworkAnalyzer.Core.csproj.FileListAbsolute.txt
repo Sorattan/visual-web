@@ -1,0 +1,12 @@
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\bin\Debug\net8.0\SocialNetworkAnalyzer.Core.deps.json
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\bin\Debug\net8.0\SocialNetworkAnalyzer.Core.dll
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\bin\Debug\net8.0\SocialNetworkAnalyzer.Core.pdb
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.AssemblyInfoInputs.cache
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.AssemblyInfo.cs
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.csproj.CoreCompileInputs.cache
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.sourcelink.json
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.dll
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\refint\SocialNetworkAnalyzer.Core.dll
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.pdb
+C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\ref\SocialNetworkAnalyzer.Core.dll

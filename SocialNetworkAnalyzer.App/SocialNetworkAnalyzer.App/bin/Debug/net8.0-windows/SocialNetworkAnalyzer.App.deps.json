@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SocialNetworkAnalyzer.App/1.0.0": {
+        "dependencies": {
+          "SocialNetworkAnalyzer.Core": "1.0.0"
+        },
+        "runtime": {
+          "SocialNetworkAnalyzer.App.dll": {}
+        }
+      },
+      "SocialNetworkAnalyzer.Core/1.0.0": {
+        "runtime": {
+          "SocialNetworkAnalyzer.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SocialNetworkAnalyzer.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SocialNetworkAnalyzer.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
