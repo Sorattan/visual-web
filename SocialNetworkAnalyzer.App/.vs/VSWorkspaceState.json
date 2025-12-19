@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SocialNetworkAnalyzer.Tests"
   ],
   "SelectedNode": "\\SocialNetworkAnalyzer.App.sln",
   "PreviewInSolutionExplorer": false

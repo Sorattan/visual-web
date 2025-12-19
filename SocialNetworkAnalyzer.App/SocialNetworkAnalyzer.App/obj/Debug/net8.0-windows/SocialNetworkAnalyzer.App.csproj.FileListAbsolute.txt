@@ -9,7 +9,6 @@ C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnal
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\App.g.cs
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\SocialNetworkAnalyzer.App_MarkupCompile.cache
-C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\SocialNetworkAnalyzer.App_MarkupCompile.lref
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\MainWindow.baml
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\SocialNetworkAnalyzer.App.g.resources
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.App\obj\Debug\net8.0-windows\SocialNetworkAnalyzer.App.GeneratedMSBuildEditorConfig.editorconfig
