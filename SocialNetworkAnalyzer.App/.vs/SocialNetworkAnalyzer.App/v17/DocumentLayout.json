@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\socialnetworkanalyzer.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|solutionrelative:socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|solutionrelative:socialnetworkanalyzer.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SocialNetworkAnalyzer.Tests",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-19T18:15:46.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SocialNetworkAnalyzer.App",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+              "RelativeToolTip": "SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-19T18:14:31.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T18:14:06.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Class1.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Class1.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Class1.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T18:13:21.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
+              "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-19T18:11:53.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T18:11:51.375Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
