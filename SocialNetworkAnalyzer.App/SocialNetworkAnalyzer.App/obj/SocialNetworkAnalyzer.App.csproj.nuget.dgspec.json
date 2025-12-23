@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj": {}
+    "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj": {}
   },
   "projects": {
-    "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj": {
+    "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+        "projectUniqueName": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
         "projectName": "SocialNetworkAnalyzer.App",
-        "projectPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
-        "packagesPath": "C:\\Users\\omerf\\.nuget\\packages\\",
-        "outputPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\obj\\",
+        "projectPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+        "packagesPath": "C:\\Users\\Emirhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\omerf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Emirhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj": {
-                "projectPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj"
+              "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj": {
+                "projectPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj"
               }
             }
           }
@@ -72,25 +68,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj": {
+    "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
         "projectName": "SocialNetworkAnalyzer.Core",
-        "projectPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
-        "packagesPath": "C:\\Users\\omerf\\.nuget\\packages\\",
-        "outputPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\obj\\",
+        "projectPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
+        "packagesPath": "C:\\Users\\Emirhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\omerf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Emirhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -137,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
