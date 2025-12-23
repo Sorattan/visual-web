@@ -10,6 +10,8 @@ using SocialNetworkAnalyzer.Core.Models;
 using SocialNetworkAnalyzer.Core.Validation;
 using Microsoft.Win32;
 using SocialNetworkAnalyzer.Core.IO;
+using System.Diagnostics;
+using SocialNetworkAnalyzer.Core.Algorithms;
 
 namespace SocialNetworkAnalyzer.App
 {
@@ -22,6 +24,10 @@ namespace SocialNetworkAnalyzer.App
 
         private int? _selectedNodeId;
         private readonly Random _rng = new Random();
+
+        private HashSet<int> _highlightedNodes = new();
+        private readonly Brush _defaultNodeFill = new SolidColorBrush(Color.FromRgb(40, 160, 240));
+        private readonly Brush _visitedFill = new SolidColorBrush(Color.FromRgb(60, 200, 120));
 
         public MainWindow()
         {
@@ -85,6 +91,8 @@ namespace SocialNetworkAnalyzer.App
                 SelectNode(_selectedNodeId.Value);
             else
                 ClearSelectionUI();
+
+            ApplyHighlights();
         }
 
         private void DrawNode(Node node)
@@ -93,7 +101,7 @@ namespace SocialNetworkAnalyzer.App
             {
                 Width = NodeRadius * 2,
                 Height = NodeRadius * 2,
-                Fill = new SolidColorBrush(Color.FromRgb(40, 160, 240)),
+                Fill = _defaultNodeFill,
                 Stroke = Brushes.White,
                 StrokeThickness = 2,
                 Cursor = Cursors.Hand,
@@ -525,5 +533,67 @@ namespace SocialNetworkAnalyzer.App
             }
         }
 
+        private void ApplyHighlights()
+        {
+            foreach (var (id, circle) in _nodeCircles)
+            {
+                circle.Fill = _highlightedNodes.Contains(id) ? _visitedFill : _defaultNodeFill;
+            }
+        }
+
+        private bool TryGetStartNode(out int startId)
+        {
+            // TextBox doluysa onu kullan
+            if (!string.IsNullOrWhiteSpace(InStartNodeId.Text) &&
+                int.TryParse(InStartNodeId.Text.Trim(), out startId))
+                return true;
+
+            // yoksa seçili node
+            if (_selectedNodeId.HasValue)
+            {
+                startId = _selectedNodeId.Value;
+                return true;
+            }
+
+            startId = 0;
+            ShowStatus("Başlangıç için Id gir veya bir node seç.", true);
+            return false;
+        }
+
+        private void RunTraversal(string name, Func<Graph, int, List<int>> algo)
+        {
+            try
+            {
+                if (!TryGetStartNode(out var startId)) return;
+
+                var sw = Stopwatch.StartNew();
+                var order = algo(_graph, startId);
+                sw.Stop();
+
+                _highlightedNodes = order.ToHashSet();
+                ApplyHighlights();
+
+                AlgoResultsList.ItemsSource = order.Select((id, idx) => $"{idx + 1}. {id}").ToList();
+                ShowStatus($"{name} bitti. Ziyaret edilen: {order.Count} | Süre: {sw.ElapsedMilliseconds} ms", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"{name} hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnBfs_Click(object sender, RoutedEventArgs e)
+    => RunTraversal("BFS", Traversals.BFS);
+
+        private void BtnDfs_Click(object sender, RoutedEventArgs e)
+            => RunTraversal("DFS", Traversals.DFS);
+
+        private void BtnClearHighlight_Click(object sender, RoutedEventArgs e)
+        {
+            _highlightedNodes.Clear();
+            ApplyHighlights();
+            AlgoResultsList.ItemsSource = null;
+            ShowStatus("Highlight temizlendi.", false);
+        }
     }
 }

@@ -143,6 +143,21 @@
             </WrapPanel>
 
             <Separator Margin="0,12,0,12"/>
+            <TextBlock Text="Algoritmalar" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
+
+            <TextBlock Text="Başlangıç Node Id (boşsa seçili node kullanılır)"/>
+            <TextBox x:Name="InStartNodeId" Margin="0,2,0,8"/>
+
+            <WrapPanel>
+              <Button Content="BFS Çalıştır" Width="110" Margin="0,0,8,8" Click="BtnBfs_Click"/>
+              <Button Content="DFS Çalıştır" Width="110" Margin="0,0,8,8" Click="BtnDfs_Click"/>
+              <Button Content="Highlight Temizle" Width="130" Margin="0,0,8,8" Click="BtnClearHighlight_Click"/>
+            </WrapPanel>
+
+            <TextBlock Text="Sonuç (Ziyaret Sırası)" FontWeight="SemiBold" Margin="0,6,0,4"/>
+            <ListBox x:Name="AlgoResultsList" Height="120"/>
+
+            <Separator Margin="0,12,0,12"/>
             <TextBlock Text="Veri İçe / Dışa Aktarma" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
 
             <WrapPanel Margin="0,6,0,0">
