@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using SocialNetworkAnalyzer.Core.Models;
 using SocialNetworkAnalyzer.Core.Validation;
+using Microsoft.Win32;
+using SocialNetworkAnalyzer.Core.IO;
 
 namespace SocialNetworkAnalyzer.App
 {
@@ -401,5 +403,127 @@ namespace SocialNetworkAnalyzer.App
                 ShowStatus($"Beklenmeyen hata: {ex.Message}", isError: true);
             }
         }
+
+        private void ClearGraph()
+        {
+            _selectedNodeId = null;
+            foreach (var id in _graph.Nodes.Keys.ToList())
+                _graph.RemoveNode(id);
+        }
+
+        private (double x, double y) AutoPos() => GetRandomPosition();
+
+        private void BtnImportCsv_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new OpenFileDialog { Filter = "CSV (*.csv;*.txt)|*.csv;*.txt|All files (*.*)|*.*" };
+                if (dlg.ShowDialog() != true) return;
+
+                var loaded = GraphIO.LoadCsv(dlg.FileName, AutoPos);
+
+                ClearGraph();
+                foreach (var n in loaded.Nodes.Values)
+                    _graph.AddNode(n);
+                foreach (var ed in loaded.Edges)
+                    _graph.AddEdge(ed.A, ed.B);
+
+                RenderGraph();
+                ShowStatus($"CSV içe aktarıldı: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"CSV içe aktarma hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnImportJson_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new OpenFileDialog { Filter = "JSON (*.json)|*.json|All files (*.*)|*.*" };
+                if (dlg.ShowDialog() != true) return;
+
+                var loaded = GraphIO.LoadJson(dlg.FileName);
+
+                ClearGraph();
+                foreach (var n in loaded.Nodes.Values)
+                    _graph.AddNode(n);
+                foreach (var ed in loaded.Edges)
+                    _graph.AddEdge(ed.A, ed.B);
+
+                RenderGraph();
+                ShowStatus($"JSON içe aktarıldı: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"JSON içe aktarma hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnExportCsv_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new SaveFileDialog { Filter = "CSV (*.csv)|*.csv", FileName = "graph.csv" };
+                if (dlg.ShowDialog() != true) return;
+
+                GraphIO.SaveCsv(dlg.FileName, _graph);
+                ShowStatus($"CSV dışa aktarıldı: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"CSV dışa aktarma hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnExportJson_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new SaveFileDialog { Filter = "JSON (*.json)|*.json", FileName = "graph.json" };
+                if (dlg.ShowDialog() != true) return;
+
+                GraphIO.SaveJson(dlg.FileName, _graph);
+                ShowStatus($"JSON dışa aktarıldı: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"JSON dışa aktarma hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnExportAdjList_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new SaveFileDialog { Filter = "Text (*.txt)|*.txt", FileName = "adjacency_list.txt" };
+                if (dlg.ShowDialog() != true) return;
+
+                GraphIO.ExportAdjacencyList(dlg.FileName, _graph);
+                ShowStatus($"Komşuluk listesi üretildi: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Komşuluk listesi hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnExportAdjMatrix_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dlg = new SaveFileDialog { Filter = "CSV (*.csv)|*.csv", FileName = "adjacency_matrix.csv" };
+                if (dlg.ShowDialog() != true) return;
+
+                GraphIO.ExportAdjacencyMatrixCsv(dlg.FileName, _graph);
+                ShowStatus($"Komşuluk matrisi üretildi: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Komşuluk matrisi hatası: {ex.Message}", true);
+            }
+        }
+
     }
 }

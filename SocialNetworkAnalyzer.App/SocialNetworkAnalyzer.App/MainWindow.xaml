@@ -142,6 +142,20 @@
               <Button Content="Edge Sil" Width="90" Margin="0,0,8,8" Click="BtnDeleteEdge_Click"/>
             </WrapPanel>
 
+            <Separator Margin="0,12,0,12"/>
+            <TextBlock Text="Veri İçe / Dışa Aktarma" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
+
+            <WrapPanel Margin="0,6,0,0">
+              <Button Content="CSV İçe Aktar" Width="120" Margin="0,0,8,8" Click="BtnImportCsv_Click"/>
+              <Button Content="JSON İçe Aktar" Width="120" Margin="0,0,8,8" Click="BtnImportJson_Click"/>
+
+              <Button Content="CSV Dışa Aktar" Width="120" Margin="0,0,8,8" Click="BtnExportCsv_Click"/>
+              <Button Content="JSON Dışa Aktar" Width="120" Margin="0,0,8,8" Click="BtnExportJson_Click"/>
+
+              <Button Content="Komşuluk Listesi" Width="130" Margin="0,0,8,8" Click="BtnExportAdjList_Click"/>
+              <Button Content="Komşuluk Matrisi" Width="130" Margin="0,0,8,8" Click="BtnExportAdjMatrix_Click"/>
+            </WrapPanel>
+
           </StackPanel>
         </ScrollViewer>
       </DockPanel>
