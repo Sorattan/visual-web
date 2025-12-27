@@ -156,6 +156,7 @@
               <Button Content="DFS Çalıştır" Width="110" Margin="0,0,8,8" Click="BtnDfs_Click"/>
               <Button Content="Degree Top-5" Width="110" Margin="0,0,8,8" Click="BtnDegreeTop5_Click"/>
               <Button Content="Dijkstra" Width="110" Margin="0,0,8,8" Click="BtnDijkstra_Click"/>
+              <Button Content="A*" Width="110" Margin="0,0,8,8" Click="BtnAStar_Click"/>
               <Button Content="Highlight Temizle" Width="130" Margin="0,0,8,8" Click="BtnClearHighlight_Click"/>
             </WrapPanel>
 

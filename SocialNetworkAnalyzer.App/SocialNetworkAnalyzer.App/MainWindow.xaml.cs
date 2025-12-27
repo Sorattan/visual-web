@@ -618,11 +618,11 @@ namespace SocialNetworkAnalyzer.App
 
                 // Sonuç listesi: maliyet + path + kenar ağırlıkları
                 var lines = new List<string>
-        {
-            $"Toplam maliyet: {cost:0.###}",
-            $"Yol: {string.Join(" -> ", path)}",
-            $"Süre: {sw.ElapsedMilliseconds} ms"
-        };
+                {
+                    $"Toplam maliyet: {cost:0.###}",
+                    $"Yol: {string.Join(" -> ", path)}",
+                    $"Süre: {sw.ElapsedMilliseconds} ms"
+                };
 
                 // İstersen detay: her adımın ağırlığı
                 for (int i = 0; i < path.Count - 1; i++)
@@ -638,6 +638,68 @@ namespace SocialNetworkAnalyzer.App
             catch (Exception ex)
             {
                 ShowStatus($"Dijkstra hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnAStar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (!TryGetStartNode(out var startId)) return;
+
+                if (string.IsNullOrWhiteSpace(InTargetNodeId.Text) || !int.TryParse(InTargetNodeId.Text.Trim(), out var targetId))
+                {
+                    ShowStatus("Hedef Node Id gir (int).", true);
+                    return;
+                }
+
+                // Boyamalar karışmasın
+                _componentColoringActive = false;
+                _componentFillByNode.Clear();
+                ComponentsResultsList.ItemsSource = null;
+                ColoringResultsList.ItemsSource = null;
+
+                var sw = Stopwatch.StartNew();
+                var weights = new DynamicWeightCalculator();
+                var (path, cost) = ShortestPaths.AStar(_graph, startId, targetId, weights);
+                sw.Stop();
+
+                if (path.Count == 0)
+                {
+                    _highlightedNodes.Clear();
+                    _highlightedEdges.Clear();
+                    RenderGraph();
+                    AlgoResultsList.ItemsSource = new List<string> { $"Ulaşılamıyor: {startId} -> {targetId}" };
+                    ShowStatus($"A*: yol yok | Süre: {sw.ElapsedMilliseconds} ms", true);
+                    return;
+                }
+
+                _highlightedNodes = path.ToHashSet();
+                _highlightedEdges.Clear();
+                for (int i = 0; i < path.Count - 1; i++)
+                    _highlightedEdges.Add(new Edge(path[i], path[i + 1]));
+
+                RenderGraph();
+
+                var lines = new List<string>
+        {
+            $"Toplam maliyet: {cost:0.###}",
+            $"Yol: {string.Join(" -> ", path)}",
+            $"Süre: {sw.ElapsedMilliseconds} ms"
+        };
+
+                for (int i = 0; i < path.Count - 1; i++)
+                {
+                    double w = weights.GetWeight(_graph, path[i], path[i + 1]);
+                    lines.Add($"  {path[i]} - {path[i + 1]} : {w:0.###}");
+                }
+
+                AlgoResultsList.ItemsSource = lines;
+                ShowStatus($"A* bitti | Yol uzunluğu: {path.Count} node | Süre: {sw.ElapsedMilliseconds} ms", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"A* hatası: {ex.Message}", true);
             }
         }
 
