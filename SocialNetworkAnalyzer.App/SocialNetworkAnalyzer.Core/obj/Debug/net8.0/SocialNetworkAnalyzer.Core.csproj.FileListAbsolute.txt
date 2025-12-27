@@ -10,3 +10,15 @@ C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnal
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\refint\SocialNetworkAnalyzer.Core.dll
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.pdb
 C:\_funny\homwork\YazLab2\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\ref\SocialNetworkAnalyzer.Core.dll
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\bin\Debug\net8.0\SocialNetworkAnalyzer.Core.deps.json
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\bin\Debug\net8.0\SocialNetworkAnalyzer.Core.dll
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\bin\Debug\net8.0\SocialNetworkAnalyzer.Core.pdb
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.AssemblyInfoInputs.cache
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.AssemblyInfo.cs
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.csproj.CoreCompileInputs.cache
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.sourcelink.json
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.dll
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\refint\SocialNetworkAnalyzer.Core.dll
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\SocialNetworkAnalyzer.Core.pdb
+C:\Users\Emirhan\Desktop\visual-web\SocialNetworkAnalyzer.App\SocialNetworkAnalyzer.Core\obj\Debug\net8.0\ref\SocialNetworkAnalyzer.Core.dll
