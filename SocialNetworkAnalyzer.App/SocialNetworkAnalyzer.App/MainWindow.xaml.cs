@@ -438,6 +438,130 @@ namespace SocialNetworkAnalyzer.App
             ShowStatus("Bileşen renklendirme temizlendi.", false);
         }
 
+        private void BtnDegreeTop5_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var sw = Stopwatch.StartNew();
+
+                var all = Centrality.DegreeCentrality(_graph);
+
+                // dereceye göre azalan, eşitse id artan
+                var top5 = all
+                    .OrderByDescending(x => x.Degree)
+                    .ThenBy(x => x.NodeId)
+                    .Take(5)
+                    .ToList();
+
+                sw.Stop();
+
+                // Component boyası aktifse highlight görünmez; bu yüzden kapatalım (istersen kaldırabilirsin)
+                _componentColoringActive = false;
+                _componentFillByNode.Clear();
+                ComponentsResultsList.ItemsSource = null;
+
+                // Top-5'i highlight yap
+                _highlightedNodes = top5.Select(x => x.NodeId).ToHashSet();
+                ApplyHighlights();
+
+                AlgoResultsList.ItemsSource = top5.Select((x, idx) =>
+                    $"{idx + 1}. Node {x.NodeId} | Degree: {x.Degree} | Centrality: {x.Score:0.###}"
+                ).ToList();
+
+                ShowStatus($"Degree Centrality Top-5 hazır | Süre: {sw.ElapsedMilliseconds} ms", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Degree Centrality hatası: {ex.Message}", true);
+            }
+        }
+        private Brush GetColorBrush(int colorIndex)
+        {
+            // Önce hazır paletten
+            if (colorIndex >= 0 && colorIndex < _componentPalette.Count)
+                return _componentPalette[colorIndex];
+
+            // Palette yetmezse deterministic (her seferinde aynı) renk üret: golden-angle hue
+            double hue = (colorIndex * 137.508) % 360.0; // golden angle
+            return new SolidColorBrush(HsvToRgb(hue, 0.70, 0.95));
+        }
+
+        private Color HsvToRgb(double h, double s, double v)
+        {
+            // h: 0..360, s/v: 0..1
+            double c = v * s;
+            double x = c * (1 - System.Math.Abs((h / 60.0) % 2 - 1));
+            double m = v - c;
+
+            double r1 = 0, g1 = 0, b1 = 0;
+            if (h < 60) { r1 = c; g1 = x; b1 = 0; }
+            else if (h < 120) { r1 = x; g1 = c; b1 = 0; }
+            else if (h < 180) { r1 = 0; g1 = c; b1 = x; }
+            else if (h < 240) { r1 = 0; g1 = x; b1 = c; }
+            else if (h < 300) { r1 = x; g1 = 0; b1 = c; }
+            else { r1 = c; g1 = 0; b1 = x; }
+
+            byte R = (byte)((r1 + m) * 255);
+            byte G = (byte)((g1 + m) * 255);
+            byte B = (byte)((b1 + m) * 255);
+            return Color.FromRgb(R, G, B);
+        }
+
+        private void BtnWelshPowell_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var sw = Stopwatch.StartNew();
+
+                // 1) Bileşenleri bul
+                var comps = ConnectedComponents.Find(_graph);
+
+                // 2) Her bileşende Welsh–Powell uygula
+                var colorOf = GraphColoring.WelshPowellPerComponent(_graph, comps);
+                int colorCount = GraphColoring.CountColors(colorOf);
+
+                sw.Stop();
+
+                // 3) Canvas boyası için Node->Brush map kur
+                _componentFillByNode.Clear();
+                foreach (var (nodeId, colorIdx) in colorOf.OrderBy(x => x.Key))
+                    _componentFillByNode[nodeId] = GetColorBrush(colorIdx);
+
+                _componentColoringActive = true;
+
+                // BFS/DFS highlight karışmasın
+                _highlightedNodes.Clear();
+                AlgoResultsList.ItemsSource = null;
+
+                // Component listesi karışmasın (istersen kalsın)
+                ComponentsResultsList.ItemsSource = null;
+
+                ApplyHighlights();
+
+                // 4) Sonuç tablosu
+                ColoringResultsList.ItemsSource = colorOf
+                    .OrderBy(kv => kv.Key)
+                    .Select(kv => $"Node {kv.Key} → Color {kv.Value}")
+                    .ToList();
+
+                ShowStatus($"Welsh–Powell bitti | Kullanılan renk: {colorCount} | Süre: {sw.ElapsedMilliseconds} ms", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Welsh–Powell hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnClearColoring_Click(object sender, RoutedEventArgs e)
+        {
+            _componentColoringActive = false;
+            _componentFillByNode.Clear();
+            ColoringResultsList.ItemsSource = null;
+
+            ApplyHighlights();
+            ShowStatus("Boyama temizlendi.", false);
+        }
+
         // ===================== EDGE CRUD =====================
         private void BtnAddEdge_Click(object sender, RoutedEventArgs e)
         {
