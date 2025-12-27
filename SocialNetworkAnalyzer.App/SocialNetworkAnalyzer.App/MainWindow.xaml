@@ -154,6 +154,17 @@
               <Button Content="Highlight Temizle" Width="130" Margin="0,0,8,8" Click="BtnClearHighlight_Click"/>
             </WrapPanel>
 
+            <Separator Margin="0,12,0,12"/>
+            <TextBlock Text="Bağlı Bileşenler (Components)" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
+
+            <WrapPanel>
+                <Button Content="Bileşenleri Bul ve Boya" Width="170" Margin="0,0,8,8" Click="BtnComponents_Click"/>
+                <Button Content="Bileşen Boyasını Temizle" Width="180" Margin="0,0,8,8" Click="BtnClearComponentColors_Click"/>
+            </WrapPanel>
+
+            <TextBlock Text="Bileşen Sonuçları" FontWeight="SemiBold" Margin="0,6,0,4"/>
+            <ListBox x:Name="ComponentsResultsList" Height="140"/>
+
             <TextBlock Text="Sonuç (Ziyaret Sırası)" FontWeight="SemiBold" Margin="0,6,0,4"/>
             <ListBox x:Name="AlgoResultsList" Height="120"/>
 

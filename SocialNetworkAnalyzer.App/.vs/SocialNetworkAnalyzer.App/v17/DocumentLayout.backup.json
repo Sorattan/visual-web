@@ -1,61 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\",
+  "WorkspaceRootPath": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\algorithms\\traversals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\algorithms\\traversals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\algorithms\\connectedcomponents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\algorithms\\connectedcomponents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\socialnetworkanalyzer.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\socialnetworkanalyzer.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\io\\graphio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\io\\graphio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\socialnetworkanalyzer.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|solutionrelative:socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\edge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\models\\edge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\models\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\weights\\dynamicweightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\weights\\dynamicweightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\weights\\dynamicweightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\validation\\graphvalidationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\validation\\graphvalidationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\weights\\iweightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\weights\\iweightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\weights\\iweightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\edge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\models\\edge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\models\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\validation\\graphvalidationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\validation\\graphvalidationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\socialnetworkanalyzer.app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|solutionrelative:socialnetworkanalyzer.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -66,28 +58,52 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Traversals.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Algorithms\\Traversals.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Algorithms\\Traversals.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Algorithms\\Traversals.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Algorithms\\Traversals.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Title": "ConnectedComponents.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T20:53:42.476Z",
+              "WhenOpened": "2025-12-27T19:38:00.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "Edge.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T18:37:26.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Node.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Node.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Node.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Node.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T18:34:24.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SocialNetworkAnalyzer.Tests.csproj",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
               "RelativeToolTip": "SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
               "ViewState": "AgIAAAUAAAAAAAAAAAAqwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -95,8 +111,7 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DynamicWeightCalculator.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
@@ -108,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GraphValidationException.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
@@ -127,69 +142,53 @@
               "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
               "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-19T18:11:53.117Z"
+              "WhenOpened": "2025-12-19T18:11:53.117Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-=======
->>>>>>> origin/alpha
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAEACAAAAAAAAAAAIwE8CAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGwBAAAAAAAAAAAuwIQBAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-19T18:11:51.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GraphIO.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\IO\\GraphIO.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\IO\\GraphIO.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\IO\\GraphIO.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\IO\\GraphIO.cs",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAIwO0AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Graph.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwFgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T20:23:53.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SocialNetworkAnalyzer.Core",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-23T19:58:49.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
-              "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-19T18:11:53.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T18:38:20.954Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "IWeightCalculator.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T18:40:35.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "SocialNetworkAnalyzer.App.csproj",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
               "RelativeToolTip": "SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -197,94 +196,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DynamicWeightCalculator.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:41:06.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Node.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Node.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Node.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Node.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Node.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:34:24.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GraphValidationException.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:32:12.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Edge.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:37:26.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Graph.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAuwFgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:38:20.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IWeightCalculator.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
-              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
-              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:40:35.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
               "RelativeToolTip": "SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:14:06.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T18:14:06.585Z"
             }
           ]
         }

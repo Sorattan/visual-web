@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\algorithms\\connectedcomponents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|solutionrelative:socialnetworkanalyzer.core\\algorithms\\connectedcomponents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|c:\\_funny\\homwork\\yazlab2\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{464ECE0F-5E76-4191-BAC5-87412FAD4FBD}|SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj|solutionrelative:socialnetworkanalyzer.tests\\socialnetworkanalyzer.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -54,11 +58,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "ConnectedComponents.cs",
+              "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Algorithms\\ConnectedComponents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:38:00.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Edge.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
@@ -70,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Node.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Node.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Node.cs",
@@ -82,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SocialNetworkAnalyzer.Tests.csproj",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DynamicWeightCalculator.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Weights\\DynamicWeightCalculator.cs",
@@ -106,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GraphValidationException.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Validation\\GraphValidationException.cs",
@@ -125,7 +142,8 @@
               "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
               "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-19T18:11:53.117Z"
+              "WhenOpened": "2025-12-19T18:11:53.117Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -135,14 +153,14 @@
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "ToolTip": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAiwJkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGwBAAAAAAAAAAAuwIQBAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-19T18:11:51.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Graph.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
@@ -154,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IWeightCalculator.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Core\\Weights\\IWeightCalculator.cs",
@@ -166,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SocialNetworkAnalyzer.App.csproj",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj",
@@ -178,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\_funny\\homwork\\YazLab2\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.Tests\\UnitTest1.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.Tests\\UnitTest1.cs",

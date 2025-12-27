@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
+using Microsoft.Win32;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using System.Windows.Controls;
+using SocialNetworkAnalyzer.Core.IO;
 using SocialNetworkAnalyzer.Core.Models;
 using SocialNetworkAnalyzer.Core.Validation;
-using Microsoft.Win32;
-using SocialNetworkAnalyzer.Core.IO;
-using System.Diagnostics;
 using SocialNetworkAnalyzer.Core.Algorithms;
 
 namespace SocialNetworkAnalyzer.App
@@ -373,6 +373,71 @@ namespace SocialNetworkAnalyzer.App
             }
         }
 
+        private bool _componentColoringActive = false;
+        private Dictionary<int, Brush> _componentFillByNode = new();
+
+        private readonly List<Brush> _componentPalette = new()
+        {
+            new SolidColorBrush(Color.FromRgb(255, 99, 71)),   // tomato
+            new SolidColorBrush(Color.FromRgb(135, 206, 235)), // skyblue
+            new SolidColorBrush(Color.FromRgb(60, 200, 120)),  // green
+            new SolidColorBrush(Color.FromRgb(255, 215, 0)),   // gold
+            new SolidColorBrush(Color.FromRgb(186, 85, 211)),  // orchid
+            new SolidColorBrush(Color.FromRgb(255, 140, 0)),   // darkorange
+            new SolidColorBrush(Color.FromRgb(64, 224, 208)),  // turquoise
+            new SolidColorBrush(Color.FromRgb(220, 20, 60)),   // crimson
+            new SolidColorBrush(Color.FromRgb(173, 255, 47)),  // greenyellow
+            new SolidColorBrush(Color.FromRgb(30, 144, 255)),  // dodgerblue
+        };
+
+        private void BtnComponents_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var sw = Stopwatch.StartNew();
+                var comps = ConnectedComponents.Find(_graph);
+                sw.Stop();
+
+                // Node -> Brush map
+                _componentFillByNode.Clear();
+                for (int i = 0; i < comps.Count; i++)
+                {
+                    var brush = _componentPalette[i % _componentPalette.Count];
+                    foreach (var id in comps[i])
+                        _componentFillByNode[id] = brush;
+                }
+
+                _componentColoringActive = true;
+
+                // BFS/DFS highlight’ı karıştırmasın diye temizleyelim
+                _highlightedNodes.Clear();
+                AlgoResultsList.ItemsSource = null;
+
+                ApplyHighlights();
+
+                // Sonuç listesi
+                ComponentsResultsList.ItemsSource = comps
+                    .Select((c, idx) => $"Bileşen {idx + 1} ({c.Count} node): " + string.Join(", ", c))
+                    .ToList();
+
+                ShowStatus($"Bileşenler bulundu: {comps.Count} | Süre: {sw.ElapsedMilliseconds} ms", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Bileşen hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnClearComponentColors_Click(object sender, RoutedEventArgs e)
+        {
+            _componentColoringActive = false;
+            _componentFillByNode.Clear();
+            ComponentsResultsList.ItemsSource = null;
+
+            ApplyHighlights();
+            ShowStatus("Bileşen renklendirme temizlendi.", false);
+        }
+
         // ===================== EDGE CRUD =====================
         private void BtnAddEdge_Click(object sender, RoutedEventArgs e)
         {
@@ -537,7 +602,14 @@ namespace SocialNetworkAnalyzer.App
         {
             foreach (var (id, circle) in _nodeCircles)
             {
-                circle.Fill = _highlightedNodes.Contains(id) ? _visitedFill : _defaultNodeFill;
+                if (_componentColoringActive && _componentFillByNode.TryGetValue(id, out var compBrush))
+                {
+                    circle.Fill = compBrush;
+                }
+                else
+                {
+                    circle.Fill = _highlightedNodes.Contains(id) ? _visitedFill : _defaultNodeFill;
+                }
             }
         }
 
