@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Diagnostics;
-using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -10,6 +10,7 @@ using System.Windows.Shapes;
 using System.Windows.Controls;
 using SocialNetworkAnalyzer.Core.IO;
 using SocialNetworkAnalyzer.Core.Models;
+using SocialNetworkAnalyzer.Core.Weights;
 using SocialNetworkAnalyzer.Core.Validation;
 using SocialNetworkAnalyzer.Core.Algorithms;
 
@@ -72,10 +73,12 @@ namespace SocialNetworkAnalyzer.App
                     Y1 = a.Y,
                     X2 = b.X,
                     Y2 = b.Y,
-                    StrokeThickness = 2,
-                    Stroke = new SolidColorBrush(Color.FromRgb(120, 120, 120)),
-                    Opacity = 0.85
+                    Opacity = 0.90
                 };
+
+                bool isPathEdge = _highlightedEdges.Contains(e);
+                line.StrokeThickness = isPathEdge ? 4 : 2;
+                line.Stroke = isPathEdge ? _pathEdgeStroke : _defaultEdgeStroke;
 
                 GraphCanvas.Children.Add(line);
             }
@@ -562,6 +565,82 @@ namespace SocialNetworkAnalyzer.App
             ShowStatus("Boyama temizlendi.", false);
         }
 
+        private HashSet<Edge> _highlightedEdges = new();
+
+        private readonly Brush _defaultEdgeStroke = new SolidColorBrush(Color.FromRgb(120, 120, 120));
+        private readonly Brush _pathEdgeStroke = new SolidColorBrush(Color.FromRgb(255, 215, 0)); // gold
+
+        private void BtnDijkstra_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Start: textbox varsa onu, yoksa seçili node
+                if (!TryGetStartNode(out var startId)) return;
+
+                // Target zorunlu
+                if (string.IsNullOrWhiteSpace(InTargetNodeId.Text) || !int.TryParse(InTargetNodeId.Text.Trim(), out var targetId))
+                {
+                    ShowStatus("Hedef Node Id gir (int).", true);
+                    return;
+                }
+
+                // Boyamalar karışmasın: component coloring kapat
+                _componentColoringActive = false;
+                _componentFillByNode.Clear();
+                ComponentsResultsList.ItemsSource = null;
+                ColoringResultsList.ItemsSource = null;
+
+                var sw = Stopwatch.StartNew();
+                var weights = new DynamicWeightCalculator();
+                var (path, cost) = ShortestPaths.Dijkstra(_graph, startId, targetId, weights);
+                sw.Stop();
+
+                if (path.Count == 0)
+                {
+                    _highlightedNodes.Clear();
+                    _highlightedEdges.Clear();
+                    RenderGraph();
+                    AlgoResultsList.ItemsSource = new List<string> { $"Ulaşılamıyor: {startId} -> {targetId}" };
+                    ShowStatus($"Dijkstra: yol yok | Süre: {sw.ElapsedMilliseconds} ms", true);
+                    return;
+                }
+
+                // Node highlight
+                _highlightedNodes = path.ToHashSet();
+
+                // Edge highlight (path boyunca)
+                _highlightedEdges.Clear();
+                for (int i = 0; i < path.Count - 1; i++)
+                    _highlightedEdges.Add(new Edge(path[i], path[i + 1]));
+
+                // Yeniden çiz (edge kalınlığı için)
+                RenderGraph();
+
+                // Sonuç listesi: maliyet + path + kenar ağırlıkları
+                var lines = new List<string>
+        {
+            $"Toplam maliyet: {cost:0.###}",
+            $"Yol: {string.Join(" -> ", path)}",
+            $"Süre: {sw.ElapsedMilliseconds} ms"
+        };
+
+                // İstersen detay: her adımın ağırlığı
+                for (int i = 0; i < path.Count - 1; i++)
+                {
+                    double w = weights.GetWeight(_graph, path[i], path[i + 1]);
+                    lines.Add($"  {path[i]} - {path[i + 1]} : {w:0.###}");
+                }
+
+                AlgoResultsList.ItemsSource = lines;
+
+                ShowStatus($"Dijkstra bitti | Yol uzunluğu: {path.Count} node | Süre: {sw.ElapsedMilliseconds} ms", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Dijkstra hatası: {ex.Message}", true);
+            }
+        }
+
         // ===================== EDGE CRUD =====================
         private void BtnAddEdge_Click(object sender, RoutedEventArgs e)
         {
@@ -779,7 +858,7 @@ namespace SocialNetworkAnalyzer.App
         }
 
         private void BtnBfs_Click(object sender, RoutedEventArgs e)
-    => RunTraversal("BFS", Traversals.BFS);
+            => RunTraversal("BFS", Traversals.BFS);
 
         private void BtnDfs_Click(object sender, RoutedEventArgs e)
             => RunTraversal("DFS", Traversals.DFS);
@@ -787,8 +866,9 @@ namespace SocialNetworkAnalyzer.App
         private void BtnClearHighlight_Click(object sender, RoutedEventArgs e)
         {
             _highlightedNodes.Clear();
-            ApplyHighlights();
+            _highlightedEdges.Clear();
             AlgoResultsList.ItemsSource = null;
+            RenderGraph();
             ShowStatus("Highlight temizlendi.", false);
         }
     }
