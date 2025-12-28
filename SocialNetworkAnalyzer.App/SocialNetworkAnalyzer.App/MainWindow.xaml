@@ -191,9 +191,9 @@
 
             <Grid Margin="0,0,0,8">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=""/>
-                    <ColumnDefinition Width=""/>
-                    <ColumnDefinition Width=""/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Margin="0,0,6,0">
@@ -223,7 +223,8 @@
                       HeadersVisibility="Column" GridLinesVisibility="Horizontal">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Algoritma" Binding="{Binding Algorithm}" Width="" />
-                    <DataGridTextColumn Header="ms" Binding="{Binding Milliseconds}" Width="70" />
+                    <DataGridTextColumn Header="µs" Binding="{Binding Microseconds, StringFormat={}{0:0.0}}" Width="80" />
+                    <DataGridTextColumn Header="ms" Binding="{Binding Milliseconds, StringFormat={}{0:0.000}}" Width="80" />
                     <DataGridTextColumn Header="Not" Binding="{Binding Note}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>  

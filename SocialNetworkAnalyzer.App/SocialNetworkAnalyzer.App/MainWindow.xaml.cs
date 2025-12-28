@@ -711,12 +711,263 @@ namespace SocialNetworkAnalyzer.App
         private sealed class PerfRow
         {
             public string Algorithm { get; set; } = "";
-            public long Milliseconds { get; set; }
+            public double Milliseconds { get; set; }
+            public double Microseconds { get; set; }
             public string Note { get; set; } = "";
         }
 
         private readonly ObservableCollection<PerfRow> _perfRows = new();
         private List<PerfRow> _lastBenchmarkSnapshot = new(); // CSV kaydetmek için
+
+        private bool TryParsePositiveInt(TextBox tb, out int value, string name)
+        {
+            if (int.TryParse(tb.Text?.Trim(), out value) && value > 0) return true;
+            ShowStatus($"{name} pozitif bir int olmalı.", true);
+            return false;
+        }
+
+        private void ApplyCircleLayout()
+        {
+            var ids = _graph.Nodes.Keys.OrderBy(x => x).ToList();
+            if (ids.Count == 0) return;
+
+            double cx = GraphCanvas.Width / 2.0;
+            double cy = GraphCanvas.Height / 2.0;
+            double r = Math.Min(cx, cy) - 90;
+            if (r < 60) r = 60;
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                double ang = 2 * Math.PI * i / ids.Count;
+                var n = _graph.GetNode(ids[i]);
+                n.X = cx + r * Math.Cos(ang);
+                n.Y = cy + r * Math.Sin(ang);
+            }
+        }
+
+        private void GenerateRandomGraph(int n, int eCount, int? seed)
+        {
+            // max edge = n(n-1)/2
+            long maxEdges = (long)n * (n - 1) / 2;
+            if (eCount > maxEdges) eCount = (int)maxEdges;
+
+            var rng = seed.HasValue ? new Random(seed.Value) : new Random();
+
+            // temizle
+            ClearGraph();
+
+            // node ekle (özellikler rastgele)
+            for (int i = 1; i <= n; i++)
+            {
+                double activity = rng.NextDouble();          // 0..1
+                double interaction = rng.Next(0, 101);       // 0..100 (istersen 0..1 yapabilirsin)
+                _graph.AddNode(new Node(i, i.ToString(), activity, interaction, 0, 0));
+            }
+
+            // edge ekle (duplicate/self-loop yok)
+            var used = new HashSet<Edge>();
+
+            // E büyükse rastgele deneme sayısı artmasın diye iki mod:
+            double density = maxEdges == 0 ? 0 : (double)eCount / maxEdges;
+            if (maxEdges <= 200_000 || density > 0.35)
+            {
+                // tüm çiftleri üret, karıştır, ilk E tanesini al (n küçük/orta için güvenli)
+                var all = new List<Edge>((int)Math.Min(maxEdges, 200_000));
+                for (int a = 1; a <= n; a++)
+                    for (int b = a + 1; b <= n; b++)
+                        all.Add(new Edge(a, b));
+
+                // shuffle (Fisher-Yates)
+                for (int i = all.Count - 1; i > 0; i--)
+                {
+                    int j = rng.Next(0, i + 1);
+                    (all[i], all[j]) = (all[j], all[i]);
+                }
+
+                for (int i = 0; i < eCount; i++)
+                {
+                    var e = all[i];
+                    _graph.AddEdge(e.A, e.B);
+                }
+            }
+            else
+            {
+                // seyrek graf: random pick
+                while (used.Count < eCount)
+                {
+                    int a = rng.Next(1, n + 1);
+                    int b = rng.Next(1, n + 1);
+                    if (a == b) continue;
+
+                    var e = new Edge(a, b);
+                    if (!used.Add(e)) continue;
+
+                    _graph.AddEdge(e.A, e.B);
+                }
+            }
+
+            ApplyCircleLayout();
+        }
+
+        private void BtnGeneratePerfGraph_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (!TryParsePositiveInt(InPerfN, out var n, "N")) return;
+                if (!TryParsePositiveInt(InPerfE, out var ec, "E")) return;
+
+                int? seed = null;
+                if (!string.IsNullOrWhiteSpace(InPerfSeed.Text) && int.TryParse(InPerfSeed.Text.Trim(), out var s))
+                    seed = s;
+
+                GenerateRandomGraph(n, ec, seed);
+
+                // UI temizle
+                _highlightedNodes.Clear();
+                _highlightedEdges.Clear();
+                _componentColoringActive = false;
+                _componentFillByNode.Clear();
+                AlgoResultsList.ItemsSource = null;
+                ComponentsResultsList.ItemsSource = null;
+                ColoringResultsList.ItemsSource = null;
+                _perfRows.Clear();
+                _lastBenchmarkSnapshot.Clear();
+
+                RenderGraph();
+                ShowStatus($"Rastgele graf üretildi: N={n}, E={ec}" + (seed.HasValue ? $", Seed={seed}" : ""), false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Graf üretme hatası: {ex.Message}", true);
+            }
+        }
+
+        private void AddPerf(string name, Action action, Func<string>? noteFactory = null)
+        {
+            var sw = Stopwatch.StartNew();
+            action();
+            sw.Stop();
+
+            double ms = sw.Elapsed.TotalMilliseconds;
+            double us = sw.Elapsed.TotalMilliseconds * 1000.0;
+
+            _perfRows.Add(new PerfRow
+            {
+                Algorithm = name,
+                Milliseconds = ms,
+                Microseconds = us,
+                Note = noteFactory?.Invoke() ?? ""
+            });
+        }
+
+        private void BtnRunBenchmark_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _perfRows.Clear();
+                _lastBenchmarkSnapshot.Clear();
+
+                if (_graph.Nodes.Count == 0)
+                {
+                    ShowStatus("Benchmark için önce graf oluştur veya içe aktar.", true);
+                    return;
+                }
+
+                var ids = _graph.Nodes.Keys.OrderBy(x => x).ToList();
+                int start = ids.First();
+                int target = ids.Last();
+
+                // BFS / DFS
+                List<int> bfs = new();
+                AddPerf("BFS",
+                    () => bfs = Traversals.BFS(_graph, start),
+                    () => $"start={start}, visited={bfs.Count}");
+
+                List<int> dfs = new();
+                AddPerf("DFS",
+                    () => dfs = Traversals.DFS(_graph, start),
+                    () => $"start={start}, visited={dfs.Count}");
+
+                // Components
+                List<List<int>> comps = new();
+                AddPerf("Connected Components",
+                    () => comps = ConnectedComponents.Find(_graph),
+                    () => $"count={comps.Count}");
+
+                // Degree centrality
+                var degList = new List<(int NodeId, int Degree, double Score)>();
+                AddPerf("Degree Centrality",
+                    () => degList = Centrality.DegreeCentrality(_graph),
+                    () => $"nodes={degList.Count}");
+
+                // Welsh–Powell (bileşen başına)
+                var colors = new Dictionary<int, int>();
+                AddPerf("Welsh–Powell",
+                    () => colors = GraphColoring.WelshPowellPerComponent(_graph, comps),
+                    () => $"colors={GraphColoring.CountColors(colors)}");
+
+                // Dijkstra / A*
+                var weights = new DynamicWeightCalculator();
+
+                (List<int> Path, double Cost) dj = (new(), double.PositiveInfinity);
+                AddPerf("Dijkstra",
+                    () => dj = ShortestPaths.Dijkstra(_graph, start, target, weights),
+                    () => dj.Path.Count == 0 ? $"start={start}, target={target}, yol yok"
+                                             : $"len={dj.Path.Count}, cost={dj.Cost:0.###}");
+
+                (List<int> Path, double Cost) ast = (new(), double.PositiveInfinity);
+                AddPerf("A*",
+                    () => ast = ShortestPaths.AStar(_graph, start, target, weights),
+                    () => ast.Path.Count == 0 ? $"start={start}, target={target}, yol yok"
+                                              : $"len={ast.Path.Count}, cost={ast.Cost:0.###}");
+
+                // Snapshot (CSV)
+                _lastBenchmarkSnapshot = _perfRows.Select(r => new PerfRow
+                {
+                    Algorithm = r.Algorithm,
+                    Milliseconds = r.Milliseconds,
+                    Note = r.Note
+                }).ToList();
+
+                ShowStatus($"Benchmark bitti. N={_graph.Nodes.Count}, E={_graph.Edges.Count()}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"Benchmark hatası: {ex.Message}", true);
+            }
+        }
+
+        private void BtnExportBenchmarkCsv_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (_lastBenchmarkSnapshot.Count == 0)
+                {
+                    ShowStatus("Önce benchmark çalıştır.", true);
+                    return;
+                }
+
+                var dlg = new SaveFileDialog { Filter = "CSV (*.csv)|*.csv", FileName = "benchmark.csv" };
+                if (dlg.ShowDialog() != true) return;
+
+                var sb = new StringBuilder();
+                sb.AppendLine("Algorithm,Milliseconds,Note");
+                foreach (var r in _lastBenchmarkSnapshot)
+                {
+                    // basit CSV escape
+                    string a = r.Algorithm.Replace("\"", "\"\"");
+                    string n = r.Note.Replace("\"", "\"\"");
+                    sb.AppendLine($"\"{a}\",{r.Milliseconds},\"{n}\"");
+                }
+
+                File.WriteAllText(dlg.FileName, sb.ToString(), Encoding.UTF8);
+                ShowStatus($"Benchmark CSV kaydedildi: {dlg.FileName}", false);
+            }
+            catch (Exception ex)
+            {
+                ShowStatus($"CSV kaydetme hatası: {ex.Message}", true);
+            }
+        }
 
         // ===================== EDGE CRUD =====================
         private void BtnAddEdge_Click(object sender, RoutedEventArgs e)
