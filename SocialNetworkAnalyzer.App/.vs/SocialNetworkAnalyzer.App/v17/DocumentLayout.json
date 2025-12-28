@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A17E32D2-43E2-43F9-8E97-9593219C3178}|SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App.csproj|solutionrelative:socialnetworkanalyzer.app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85895809-F40E-4093-A368-30268273D6CD}|SocialNetworkAnalyzer.Core\\SocialNetworkAnalyzer.Core.csproj|c:\\users\\emirhan\\desktop\\visual-web\\socialnetworkanalyzer.app\\socialnetworkanalyzer.core\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -82,18 +82,17 @@
               "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Node.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:34:24.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T18:34:24.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
               "RelativeToolTip": "SocialNetworkAnalyzer.App\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAFIDAAAAAAAAAADgv1oDAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAMMDAAAAAAAAAADwv9ADAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-19T18:11:51.375Z",
               "EditorCaption": ""
@@ -108,12 +107,11 @@
               "RelativeToolTip": "SocialNetworkAnalyzer.Tests\\SocialNetworkAnalyzer.Tests.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-19T18:15:46.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T18:15:46.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Emirhan\\Desktop\\visual-web\\SocialNetworkAnalyzer.App\\SocialNetworkAnalyzer.App\\MainWindow.xaml",
               "RelativeDocumentMoniker": "SocialNetworkAnalyzer.App\\MainWindow.xaml",
@@ -133,8 +131,7 @@
               "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Edge.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:37:26.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T18:37:26.208Z"
             },
             {
               "$type": "Document",
@@ -146,8 +143,7 @@
               "RelativeToolTip": "SocialNetworkAnalyzer.Core\\Models\\Graph.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:38:20.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T18:38:20.954Z"
             },
             {
               "$type": "Document",

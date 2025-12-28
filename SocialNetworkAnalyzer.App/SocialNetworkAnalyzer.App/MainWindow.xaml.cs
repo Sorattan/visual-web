@@ -34,10 +34,16 @@ namespace SocialNetworkAnalyzer.App
         private readonly Brush _defaultNodeFill = new SolidColorBrush(Color.FromRgb(40, 160, 240));
         private readonly Brush _visitedFill = new SolidColorBrush(Color.FromRgb(60, 200, 120));
 
+        private readonly ScaleTransform _zoom = new ScaleTransform(1.0, 1.0);
+        private const double ZoomStep = 1.12;
+        private const double MinZoom = 0.2;
+        private const double MaxZoom = 5.0;
+
         public MainWindow()
         {
             InitializeComponent();
             PerfResultsGrid.ItemsSource = _perfRows;
+            GraphCanvas.LayoutTransform = _zoom;
 
             Loaded += (_, __) =>
             {
@@ -967,6 +973,37 @@ namespace SocialNetworkAnalyzer.App
             {
                 ShowStatus($"CSV kaydetme hatası: {ex.Message}", true);
             }
+        }
+
+        private void GraphScroll_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            // Sadece CTRL basılıyken zoom yap
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == 0) return;
+
+            e.Handled = true;
+
+            double oldScale = _zoom.ScaleX;
+            double factor = e.Delta > 0 ? ZoomStep : 1.0 / ZoomStep;
+            double newScale = Math.Max(MinZoom, Math.Min(MaxZoom, oldScale * factor));
+            if (Math.Abs(newScale - oldScale) < 0.000001) return;
+
+            // Mouse’un canvas üzerindeki (zoom uygulanmamış) konumu
+            Point p = e.GetPosition(GraphCanvas);
+
+            // Scroll offsetleri "transform edilmiş ölçekte" çalıştığı için anchor düzeltmesi:
+            double offX = GraphScroll.HorizontalOffset;
+            double offY = GraphScroll.VerticalOffset;
+
+            _zoom.ScaleX = _zoom.ScaleY = newScale;
+
+            // İmleç altındaki nokta ekranda sabit kalsın
+            double newOffX = offX + p.X * (newScale - oldScale);
+            double newOffY = offY + p.Y * (newScale - oldScale);
+
+            GraphScroll.ScrollToHorizontalOffset(newOffX);
+            GraphScroll.ScrollToVerticalOffset(newOffY);
+
+            ShowStatus($"Zoom: {(newScale * 100):0}% (Ctrl+Scroll)", false);
         }
 
         // ===================== EDGE CRUD =====================

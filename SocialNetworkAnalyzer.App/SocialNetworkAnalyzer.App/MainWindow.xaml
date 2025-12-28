@@ -11,10 +11,13 @@
 
     <!-- SOL: Canvas -->
     <Border Grid.Column="0" Margin="10" BorderBrush="#444" BorderThickness="1" CornerRadius="6">
-      <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <Canvas x:Name="GraphCanvas" Width="1400" Height="1000" Background="#111"/>
-      </ScrollViewer>
-    </Border>
+            <ScrollViewer x:Name="GraphScroll"
+                          HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Auto"
+                          PreviewMouseWheel="GraphScroll_PreviewMouseWheel">
+              <Canvas x:Name="GraphCanvas" Width="1400" Height="1000" Background="#111"/>
+            </ScrollViewer>
+        </Border>
 
     <!-- SAĞ: Panel -->
     <Border Grid.Column="1" Margin="10" BorderBrush="#444" BorderThickness="1" CornerRadius="6" Padding="12">
