@@ -39,9 +39,18 @@ namespace SocialNetworkAnalyzer.App
         private const double MinZoom = 0.2;
         private const double MaxZoom = 5.0;
 
+        private readonly Dictionary<int, TextBlock> _nodeLabels = new();
+        private readonly Dictionary<Edge, Line> _edgeLines = new();
+
+        private bool _isDragging = false;
+        private int _dragNodeId;
+        private Vector _dragOffset; // (nodeCenter - mousePos)
+
         public MainWindow()
         {
             InitializeComponent();
+            GraphCanvas.MouseMove += GraphCanvas_MouseMove;
+            GraphCanvas.MouseLeftButtonUp += GraphCanvas_MouseLeftButtonUp;
             PerfResultsGrid.ItemsSource = _perfRows;
             GraphCanvas.LayoutTransform = _zoom;
 
@@ -71,6 +80,8 @@ namespace SocialNetworkAnalyzer.App
         {
             GraphCanvas.Children.Clear();
             _nodeCircles.Clear();
+            _nodeLabels.Clear();
+            _edgeLines.Clear();
 
             // Edges first
             foreach (var e in _graph.Edges)
@@ -91,6 +102,7 @@ namespace SocialNetworkAnalyzer.App
                 line.StrokeThickness = isPathEdge ? 4 : 2;
                 line.Stroke = isPathEdge ? _pathEdgeStroke : _defaultEdgeStroke;
 
+                _edgeLines[e] = line;
                 GraphCanvas.Children.Add(line);
             }
 
@@ -137,6 +149,8 @@ namespace SocialNetworkAnalyzer.App
             Canvas.SetLeft(label, node.X - 6);
             Canvas.SetTop(label, node.Y - 10);
 
+            _nodeLabels[node.Id] = label;
+
             GraphCanvas.Children.Add(circle);
             GraphCanvas.Children.Add(label);
 
@@ -157,7 +171,96 @@ namespace SocialNetworkAnalyzer.App
         {
             if (sender is not Ellipse el) return;
             if (el.Tag is not int id) return;
+
             SelectNode(id);
+
+            // Drag başlat
+            var mouse = e.GetPosition(GraphCanvas);
+            var n = _graph.GetNode(id);
+
+            _isDragging = true;
+            _dragNodeId = id;
+            _dragOffset = new Vector(n.X - mouse.X, n.Y - mouse.Y);
+
+            GraphCanvas.CaptureMouse();
+            e.Handled = true;
+        }
+
+        private void GraphCanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!_isDragging) return;
+            if (e.LeftButton != MouseButtonState.Pressed)
+            {
+                EndDrag();
+                return;
+            }
+
+            var mouse = e.GetPosition(GraphCanvas);
+            var n = _graph.GetNode(_dragNodeId);
+
+            // Yeni merkez konumu
+            double newX = mouse.X + _dragOffset.X;
+            double newY = mouse.Y + _dragOffset.Y;
+
+            // Canvas sınırına hafif clamp (istersen kaldır)
+            newX = Math.Max(NodeRadius, Math.Min(GraphCanvas.Width - NodeRadius, newX));
+            newY = Math.Max(NodeRadius, Math.Min(GraphCanvas.Height - NodeRadius, newY));
+
+            n.X = newX;
+            n.Y = newY;
+
+            UpdateNodeVisual(_dragNodeId);
+            UpdateIncidentEdges(_dragNodeId);
+
+            // Seçili node ise input X/Y de güncellensin
+            if (_selectedNodeId == _dragNodeId)
+            {
+                InNodeX.Text = n.X.ToString("0.###");
+                InNodeY.Text = n.Y.ToString("0.###");
+            }
+        }
+
+        private void GraphCanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (_isDragging) EndDrag();
+        }
+
+        private void EndDrag()
+        {
+            _isDragging = false;
+            GraphCanvas.ReleaseMouseCapture();
+        }
+
+        private void UpdateNodeVisual(int nodeId)
+        {
+            var n = _graph.GetNode(nodeId);
+
+            if (_nodeCircles.TryGetValue(nodeId, out var circle))
+            {
+                Canvas.SetLeft(circle, n.X - NodeRadius);
+                Canvas.SetTop(circle, n.Y - NodeRadius);
+            }
+
+            if (_nodeLabels.TryGetValue(nodeId, out var label))
+            {
+                Canvas.SetLeft(label, n.X - 6);
+                Canvas.SetTop(label, n.Y - 10);
+            }
+        }
+
+        private void UpdateIncidentEdges(int nodeId)
+        {
+            foreach (var nb in _graph.GetNeighbors(nodeId))
+            {
+                var e = new Edge(nodeId, nb);
+                if (!_edgeLines.TryGetValue(e, out var line)) continue;
+
+                var a = _graph.GetNode(e.A);
+                var b = _graph.GetNode(e.B);
+
+                line.X1 = a.X; line.Y1 = a.Y;
+                line.X2 = b.X; line.Y2 = b.Y;
+            }
         }
 
         private void NodesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
