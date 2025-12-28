@@ -1,8 +1,11 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.IO;
+using System.Text;
 using System.Linq;
-using System.Collections.Generic;
 using System.Diagnostics;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -13,6 +16,7 @@ using SocialNetworkAnalyzer.Core.Models;
 using SocialNetworkAnalyzer.Core.Weights;
 using SocialNetworkAnalyzer.Core.Validation;
 using SocialNetworkAnalyzer.Core.Algorithms;
+
 
 namespace SocialNetworkAnalyzer.App
 {
@@ -33,6 +37,7 @@ namespace SocialNetworkAnalyzer.App
         public MainWindow()
         {
             InitializeComponent();
+            PerfResultsGrid.ItemsSource = _perfRows;
 
             Loaded += (_, __) =>
             {
@@ -702,6 +707,16 @@ namespace SocialNetworkAnalyzer.App
                 ShowStatus($"A* hatası: {ex.Message}", true);
             }
         }
+
+        private sealed class PerfRow
+        {
+            public string Algorithm { get; set; } = "";
+            public long Milliseconds { get; set; }
+            public string Note { get; set; } = "";
+        }
+
+        private readonly ObservableCollection<PerfRow> _perfRows = new();
+        private List<PerfRow> _lastBenchmarkSnapshot = new(); // CSV kaydetmek için
 
         // ===================== EDGE CRUD =====================
         private void BtnAddEdge_Click(object sender, RoutedEventArgs e)

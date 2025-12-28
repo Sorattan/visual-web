@@ -185,7 +185,49 @@
 
             <TextBlock Text="Boyama Sonuçları (Node → Color)" FontWeight="SemiBold" Margin="0,6,0,4"/>
             <ListBox x:Name="ColoringResultsList" Height="160"/>
+            
+            <Separator Margin="0,12,0,12"/>
+            <TextBlock Text="Performans Testleri" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
 
+            <Grid Margin="0,0,0,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=""/>
+                    <ColumnDefinition Width=""/>
+                    <ColumnDefinition Width=""/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,6,0">
+                    <TextBlock Text="N (Node)"/>
+                    <TextBox x:Name="InPerfN" Text="50" Margin="0,2,0,0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,6,0">
+                    <TextBlock Text="E (Edge)"/>
+                    <TextBox x:Name="InPerfE" Text="120" Margin="0,2,0,0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Seed (ops.)"/>
+                    <TextBox x:Name="InPerfSeed" Margin="0,2,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <WrapPanel Margin="0,0,0,8">
+                <Button Content="Rastgele Graf Üret" Width="150" Margin="0,0,8,8" Click="BtnGeneratePerfGraph_Click"/>
+                <Button Content="Benchmark Çalıştır" Width="140" Margin="0,0,8,8" Click="BtnRunBenchmark_Click"/>
+                <Button Content="Benchmark CSV Kaydet" Width="170" Margin="0,0,8,8" Click="BtnExportBenchmarkCsv_Click"/>
+            </WrapPanel>
+
+            <DataGrid x:Name="PerfResultsGrid" Height="230"
+                      AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                      HeadersVisibility="Column" GridLinesVisibility="Horizontal">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Algoritma" Binding="{Binding Algorithm}" Width="" />
+                    <DataGridTextColumn Header="ms" Binding="{Binding Milliseconds}" Width="70" />
+                    <DataGridTextColumn Header="Not" Binding="{Binding Note}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>  
+              
             <Separator Margin="0,12,0,12"/>
 
             <TextBlock Text="Veri İçe / Dışa Aktarma" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
