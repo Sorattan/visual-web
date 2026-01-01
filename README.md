@@ -15,7 +15,7 @@ WPF tabanlı bir sosyal ağ analiz uygulaması. Kullanıcı arayüzünde graf g�
   - `IO/` (GraphIO: CSV/JSON import-export, adjacency list/matrix)
 - **SocialNetworkAnalyzer.App**
   - WPF UI (`MainWindow.xaml`, `MainWindow.xaml.cs`)
-<img width="4035" height="3255" alt="Mimari" src="https://github.com/user-attachments/assets/c8de6563-ed11-4ada-b689-7f2caffebe02" />
+<img  style="max-width: 500px; width: 60%; height: auto;" alt="Mimari" src="https://github.com/user-attachments/assets/c8de6563-ed11-4ada-b689-7f2caffebe02" />
 
 ## Özellikler
 
@@ -36,12 +36,117 @@ WPF tabanlı bir sosyal ağ analiz uygulaması. Kullanıcı arayüzünde graf g�
 - Komşuluk matrisi üretimi (csv)
 
 ### Algoritmalar
-- BFS, DFS (ziyaret sırası + highlight)
-- Connected Components (bileşenleri bul + farklı renge boya)
-- Degree Centrality (Top-5 liste + highlight)
-- Welsh–Powell Graph Coloring (node→color tablosu + renklendirme)
-- Dijkstra (dinamik ağırlıklarla en kısa yol)
-- A* (heuristic: koordinat tabanlı)
+- #### BFS
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>BFS (Breadth-First Search)</h3>
+      <p><b>Amaç:</b> Başlangıç düğümünden itibaren düğümleri katman katman dolaşır.</p>
+      <p><b>Çalışma mantığı:</b> FIFO kuyruk (Queue) kullanır. Ziyaret edilmemiş komşular kuyruğa eklenir.</p>
+      <p><b>Karmaşıklık:</b> O(V + E)</p>
+      <p><b>Çıktı:</b> Ziyaret sırası (visited order)</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/39367c97-6551-4f64-a0a4-3c3036614853" width="320" alt="BFS">  
+    </td>
+  </tr>
+</table>
+
+- #### DFS
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>DFS (Depth-First Search)</h3>
+      <p><b>Amaç:</b> Grafı derinlemesine gezerek düğümleri keşfeder; bileşen bulma ve birçok graf analizinin temelini oluşturur.</p>
+      <p><b>Çalışma mantığı:</b> LIFO yığın (Stack) ya da recursion kullanır. <i>currentId</i> alınır, ziyaret edilmemişse işaretlenir ve komşuları stack’e eklenir.</p>
+      <p><b>Karmaşıklık:</b> O(V + E)</p>
+      <p><b>Çıktı:</b> Ziyaret sırası (visited order) ve keşif yapısı.</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/d0839378-8de1-4f9b-a33d-18cceda56f44" width="320" alt="DFS">
+    </td>
+  </tr>
+</table>
+
+- #### Connected Components
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>Connected Components (Bağlı Bileşenler)</h3>
+      <p><b>Amaç:</b> Grafı, birbirine erişebilen düğüm kümelerine (bileşenlere) ayırır.</p>
+      <p><b>Çalışma mantığı:</b> Tüm düğümler taranır. Ziyaret edilmemiş bir düğüm görüldüğünde BFS/DFS başlatılır; bulunan düğümler bir bileşeni oluşturur.</p>
+      <p><b>Karmaşıklık:</b> O(V + E)</p>
+      <p><b>Çıktı:</b> Bileşen listesi (örn. Bileşen 1: {…}, Bileşen 2: {…}).</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/9c787fa1-f45f-443e-9ce3-a68e88643e85" width="320" alt="Connected_Components">
+    </td>
+  </tr>
+</table>
+
+- #### Degree Centrality
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>Degree Centrality (Derece Merkeziliği)</h3>
+      <p><b>Amaç:</b> Her düğümün “ne kadar bağlantılı” olduğunu ölçer. Sosyal ağlarda hızlı ve temel bir merkezilik metriğidir.</p>
+      <p><b>Çalışma mantığı:</b> Her <i>nodeId</i> için <i>degree(nodeId)</i> hesaplanır. İstenirse normalize edilir: <i>degree/(N−1)</i>. Sonuçlar sıralanıp Top-k gösterilir.</p>
+      <p><b>Karmaşıklık:</b> Hesaplama O(V + E), sıralama ile toplam O(E + V log V)</p>
+      <p><b>Çıktı:</b> Node → (degree, score) listesi, Top-5 tablo/etiketleme.</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/c4dfe875-1c13-4644-bbec-f550271c0d54" width="320" alt="Degree_Centrality">
+    </td>
+  </tr>
+</table>
+
+- #### Welsh–Powell Graph Coloring
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>Welsh–Powell Graph Coloring (Graf Boyama)</h3>
+      <p><b>Amaç:</b> Komşu düğümler aynı rengi almayacak şekilde düğümleri renklendirir. (Greedy/heuristic; minimum renk garantisi yoktur.)</p>
+      <p><b>Çalışma mantığı:</b> Düğümler dereceye göre azalan sıralanır. Her <i>currentId</i> için komşu renkleri toplanır ve kullanılmayan en küçük renk atanır: <i>colorOf[currentId]</i>.</p>
+      <p><b>Karmaşıklık:</b> Sıralama O(V log V); komşu kontrolüne bağlı olarak pratikte O(E) civarı, toplamda genelde O(E + V log V).</p>
+      <p><b>Çıktı:</b> Node → Color tablosu ve graf üzerinde renklendirme.</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/2d0787cb-7d05-4083-ae1a-48bc6eccf4fd" width="320" alt="WelshPowell">
+    </td>
+  </tr>
+</table>
+
+- #### Dijkstra
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>Dijkstra (En Kısa Yol)</h3>
+      <p><b>Amaç:</b> Negatif olmayan ağırlıklarda start → target en kısa yolu bulur.</p>
+      <p><b>Çalışma mantığı:</b> <i>dist[startId]=0</i>, diğerleri ∞. Priority Queue (PQ) ile en küçük <i>dist</i>’e sahip <i>currentId</i> seçilir. Her komşu için <i>alternative = dist[current] +     weight(current, neighbor)</i> hesaplanır; daha iyiyse <i>dist</i> ve <i>prev</i> güncellenir (relax).</p>
+      <p><b>Karmaşıklık:</b> PQ ile O((V + E) log V)</p>
+      <p><b>Çıktı:</b> En kısa yol (node dizisi) + toplam maliyet, graf üzerinde yol vurgusu.</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/07dfec6a-e536-454f-bc52-e687f5d7eb0f" width="320" alt="Dijkstra">
+    </td>
+  </tr>
+</table>
+
+- #### A*
+<table>
+  <tr>
+    <td width="65%" valign="top">
+      <h3>A* (A-Star) (Sezgisel En Kısa Yol)</h3>
+      <p><b>Amaç:</b> Dijkstra’nın garantisini koruyup (uygun heuristic ile) hedefe daha hızlı yönelerek aramayı pratikte hızlandırmak.</p>
+      <p><b>Çalışma mantığı:</b> <i>gScore</i> gerçek maliyet, <i>hScore=heuristic(node)</i> hedefe tahmin, <i>fScore=gScore+hScore</i>. PQ, en küçük <i>fScore</i>’u seçer. Komşular için daha iyi <i>gScore</i> bulunursa <i>cameFrom</i>, <i>gScore</i>, <i>fScore</i> güncellenir.</p>
+      <p><b>Karmaşıklık:</b> Worst-case O((V + E) log V) (Dijkstra’ya yaklaşır), iyi heuristic ile pratikte daha hızlı olabilir.</p>
+      <p><b>Çıktı:</b> En kısa yol + maliyet, graf üzerinde yol vurgusu.</p>
+    </td>
+    <td width="35%" valign="top" align="center">
+      <img src="https://github.com/user-attachments/assets/3f4491fd-2cf7-4f69-862e-2a520c542395" width="320" alt="A">
+    </td>
+  </tr>
+</table>
 
 ### Performans Testleri
 - N node / E edge / seed ile rastgele graf üret
