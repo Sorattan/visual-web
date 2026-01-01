@@ -11,10 +11,7 @@ public static class GraphColoring
     {
         var subset = nodesSubset.ToHashSet();
 
-        var order = subset
-            .OrderByDescending(id => graph.Degree(id))
-            .ThenBy(id => id)
-            .ToList();
+        var order = subset.OrderByDescending(id => graph.Degree(id)).ThenBy(id => id).ToList();
 
         var colorOf = new Dictionary<int, int>();
 
@@ -37,7 +34,6 @@ public static class GraphColoring
         return colorOf;
     }
 
-    // İsterde belirtildiği gibi: her bağlı bileşeni ayrı ayrı boyama
     public static Dictionary<int, int> WelshPowellPerComponent(Graph graph, List<List<int>> components)
     {
         var result = new Dictionary<int, int>();
@@ -52,6 +48,5 @@ public static class GraphColoring
         return result;
     }
 
-    public static int CountColors(Dictionary<int, int> colorOf)
-        => colorOf.Count == 0 ? 0 : (colorOf.Values.Max() + 1);
+    public static int CountColors(Dictionary<int, int> colorOf) => colorOf.Count == 0 ? 0 : (colorOf.Values.Max() + 1);
 }

@@ -62,7 +62,7 @@ namespace SocialNetworkAnalyzer.App
             };
         }
 
-        // ===================== SAMPLE =====================
+        // SAMPLE
         private void BuildSampleGraph()
         {
             _graph.Nodes.ToList().ForEach(kv => _graph.RemoveNode(kv.Key));
@@ -75,7 +75,7 @@ namespace SocialNetworkAnalyzer.App
             _graph.AddEdge(2, 3);
         }
 
-        // ===================== RENDER =====================
+        // RENDER 
         private void RenderGraph()
         {
             GraphCanvas.Children.Clear();
@@ -166,7 +166,7 @@ namespace SocialNetworkAnalyzer.App
                 NodesList.SelectedItem = _selectedNodeId.Value;
         }
 
-        // ===================== SELECTION =====================
+        // SELECTION
         private void Node_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (sender is not Ellipse el) return;
@@ -174,7 +174,7 @@ namespace SocialNetworkAnalyzer.App
 
             SelectNode(id);
 
-            // Drag başlat
+            // Drag
             var mouse = e.GetPosition(GraphCanvas);
             var n = _graph.GetNode(id);
 
@@ -202,7 +202,6 @@ namespace SocialNetworkAnalyzer.App
             double newX = mouse.X + _dragOffset.X;
             double newY = mouse.Y + _dragOffset.Y;
 
-            // Canvas sınırına hafif clamp (istersen kaldır)
             newX = Math.Max(NodeRadius, Math.Min(GraphCanvas.Width - NodeRadius, newX));
             newY = Math.Max(NodeRadius, Math.Min(GraphCanvas.Height - NodeRadius, newY));
 
@@ -295,7 +294,7 @@ namespace SocialNetworkAnalyzer.App
             var neighbors = _graph.GetNeighbors(nodeId).OrderBy(x => x).ToList();
             TxtNeighbors.Text = neighbors.Count == 0 ? "-" : string.Join(", ", neighbors);
 
-            // Hızlı güncelleme için inputları da dolduralım
+            // inputları doldur
             InNodeId.Text = n.Id.ToString();
             InNodeLabel.Text = n.Label;
             InNodeActivity.Text = n.Activity.ToString("0.###");
@@ -310,14 +309,14 @@ namespace SocialNetworkAnalyzer.App
             TxtId.Text = TxtLabel.Text = TxtActivity.Text = TxtInteraction.Text = TxtDegree.Text = TxtNeighbors.Text = "-";
         }
 
-        // ===================== STATUS =====================
+        // STATUS
         private void ShowStatus(string message, bool isError)
         {
             TxtStatus.Text = message;
             TxtStatus.Foreground = isError ? Brushes.OrangeRed : Brushes.LightGreen;
         }
 
-        // ===================== PARSE HELPERS =====================
+        // PARSE HELPERS
         private bool TryParseInt(TextBox tb, out int value, string fieldName)
         {
             if (int.TryParse(tb.Text?.Trim(), out value)) return true;
@@ -327,13 +326,12 @@ namespace SocialNetworkAnalyzer.App
 
         private bool TryParseDouble(TextBox tb, out double value, string fieldName)
         {
-            // TR sistemde virgül olabiliyor; double.TryParse zaten kültüre göre çalışır.
             if (double.TryParse(tb.Text?.Trim(), out value)) return true;
             ShowStatus($"{fieldName} sayısal (double) olmalı.", isError: true);
             return false;
         }
 
-        // ===================== NODE CRUD =====================
+        // NODE CRUD
         private void BtnAddNode_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -357,7 +355,7 @@ namespace SocialNetworkAnalyzer.App
                 }
                 else
                 {
-                    // X/Y boşsa yine otomatik verelim
+                    // X/Y boşsa otomatik
                     if (!double.TryParse(InNodeX.Text?.Trim(), out x) || !double.TryParse(InNodeY.Text?.Trim(), out y))
                         (x, y) = GetRandomPosition();
                 }
@@ -391,7 +389,6 @@ namespace SocialNetworkAnalyzer.App
                     return;
                 }
 
-                // Boş bırakılan alanlar değişmesin
                 string? label = string.IsNullOrWhiteSpace(InNodeLabel.Text) ? null : InNodeLabel.Text.Trim();
 
                 double? activity = null;
@@ -462,7 +459,7 @@ namespace SocialNetworkAnalyzer.App
 
         private (double x, double y) GetRandomPosition()
         {
-            // Canvas sınırları içinde güzel bir rastgele konum
+            // Canvas sınırları içinde rastgele konum
             var margin = 40.0;
             var w = Math.Max(200, GraphCanvas.Width - margin * 2);
             var h = Math.Max(200, GraphCanvas.Height - margin * 2);
@@ -564,15 +561,11 @@ namespace SocialNetworkAnalyzer.App
                 var all = Centrality.DegreeCentrality(_graph);
 
                 // dereceye göre azalan, eşitse id artan
-                var top5 = all
-                    .OrderByDescending(x => x.Degree)
-                    .ThenBy(x => x.NodeId)
-                    .Take(5)
-                    .ToList();
+                var top5 = all.OrderByDescending(x => x.Degree).ThenBy(x => x.NodeId).Take(5).ToList();
 
                 sw.Stop();
 
-                // Component boyası aktifse highlight görünmez; bu yüzden kapatalım (istersen kaldırabilirsin)
+                // Component boyası aktifse highlight görünmez
                 _componentColoringActive = false;
                 _componentFillByNode.Clear();
                 ComponentsResultsList.ItemsSource = null;
@@ -598,7 +591,6 @@ namespace SocialNetworkAnalyzer.App
             if (colorIndex >= 0 && colorIndex < _componentPalette.Count)
                 return _componentPalette[colorIndex];
 
-            // Palette yetmezse deterministic (her seferinde aynı) renk üret: golden-angle hue
             double hue = (colorIndex * 137.508) % 360.0; // golden angle
             return new SolidColorBrush(HsvToRgb(hue, 0.70, 0.95));
         }
@@ -630,36 +622,29 @@ namespace SocialNetworkAnalyzer.App
             {
                 var sw = Stopwatch.StartNew();
 
-                // 1) Bileşenleri bul
                 var comps = ConnectedComponents.Find(_graph);
 
-                // 2) Her bileşende Welsh–Powell uygula
+                // Welsh–Powell uygula
                 var colorOf = GraphColoring.WelshPowellPerComponent(_graph, comps);
                 int colorCount = GraphColoring.CountColors(colorOf);
 
                 sw.Stop();
 
-                // 3) Canvas boyası için Node->Brush map kur
                 _componentFillByNode.Clear();
                 foreach (var (nodeId, colorIdx) in colorOf.OrderBy(x => x.Key))
                     _componentFillByNode[nodeId] = GetColorBrush(colorIdx);
 
                 _componentColoringActive = true;
 
-                // BFS/DFS highlight karışmasın
                 _highlightedNodes.Clear();
                 AlgoResultsList.ItemsSource = null;
 
-                // Component listesi karışmasın (istersen kalsın)
                 ComponentsResultsList.ItemsSource = null;
 
                 ApplyHighlights();
 
-                // 4) Sonuç tablosu
-                ColoringResultsList.ItemsSource = colorOf
-                    .OrderBy(kv => kv.Key)
-                    .Select(kv => $"Node {kv.Key} → Color {kv.Value}")
-                    .ToList();
+                // Sonuç tablosu
+                ColoringResultsList.ItemsSource = colorOf.OrderBy(kv => kv.Key).Select(kv => $"Node {kv.Key} → Color {kv.Value}").ToList();
 
                 ShowStatus($"Welsh–Powell bitti | Kullanılan renk: {colorCount} | Süre: {sw.ElapsedMilliseconds} ms", false);
             }
@@ -698,7 +683,7 @@ namespace SocialNetworkAnalyzer.App
                     return;
                 }
 
-                // Boyamalar karışmasın: component coloring kapat
+                // component coloring kapat
                 _componentColoringActive = false;
                 _componentFillByNode.Clear();
                 ComponentsResultsList.ItemsSource = null;
@@ -722,12 +707,11 @@ namespace SocialNetworkAnalyzer.App
                 // Node highlight
                 _highlightedNodes = path.ToHashSet();
 
-                // Edge highlight (path boyunca)
+                // Edge highlight
                 _highlightedEdges.Clear();
                 for (int i = 0; i < path.Count - 1; i++)
                     _highlightedEdges.Add(new Edge(path[i], path[i + 1]));
 
-                // Yeniden çiz (edge kalınlığı için)
                 RenderGraph();
 
                 // Sonuç listesi: maliyet + path + kenar ağırlıkları
@@ -738,7 +722,7 @@ namespace SocialNetworkAnalyzer.App
                     $"Süre: {sw.ElapsedMilliseconds} ms"
                 };
 
-                // İstersen detay: her adımın ağırlığı
+                // her adımın ağırlığı
                 for (int i = 0; i < path.Count - 1; i++)
                 {
                     double w = weights.GetWeight(_graph, path[i], path[i + 1]);
@@ -767,7 +751,7 @@ namespace SocialNetworkAnalyzer.App
                     return;
                 }
 
-                // Boyamalar karışmasın
+                // component coloring kapat
                 _componentColoringActive = false;
                 _componentFillByNode.Clear();
                 ComponentsResultsList.ItemsSource = null;
@@ -862,25 +846,24 @@ namespace SocialNetworkAnalyzer.App
 
             var rng = seed.HasValue ? new Random(seed.Value) : new Random();
 
-            // temizle
             ClearGraph();
 
-            // node ekle (özellikler rastgele)
+            // node ekle
             for (int i = 1; i <= n; i++)
             {
                 double activity = rng.NextDouble();          // 0..1
-                double interaction = rng.Next(0, 101);       // 0..100 (istersen 0..1 yapabilirsin)
+                double interaction = rng.Next(0, 101);       // 0..100
                 _graph.AddNode(new Node(i, i.ToString(), activity, interaction, 0, 0));
             }
 
-            // edge ekle (duplicate/self-loop yok)
+            // edge ekle
             var used = new HashSet<Edge>();
 
             // E büyükse rastgele deneme sayısı artmasın diye iki mod:
             double density = maxEdges == 0 ? 0 : (double)eCount / maxEdges;
             if (maxEdges <= 200_000 || density > 0.35)
             {
-                // tüm çiftleri üret, karıştır, ilk E tanesini al (n küçük/orta için güvenli)
+                // tüm çiftleri üret, karıştır, ilk E tanesini al
                 var all = new List<Edge>((int)Math.Min(maxEdges, 200_000));
                 for (int a = 1; a <= n; a++)
                     for (int b = a + 1; b <= n; b++)
@@ -1080,7 +1063,7 @@ namespace SocialNetworkAnalyzer.App
 
         private void GraphScroll_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            // Sadece CTRL basılıyken zoom yap
+            // CTRL basılıyken zoom yap
             if ((Keyboard.Modifiers & ModifierKeys.Control) == 0) return;
 
             e.Handled = true;
@@ -1090,10 +1073,10 @@ namespace SocialNetworkAnalyzer.App
             double newScale = Math.Max(MinZoom, Math.Min(MaxZoom, oldScale * factor));
             if (Math.Abs(newScale - oldScale) < 0.000001) return;
 
-            // Mouse’un canvas üzerindeki (zoom uygulanmamış) konumu
+            // Mouse konumu
             Point p = e.GetPosition(GraphCanvas);
 
-            // Scroll offsetleri "transform edilmiş ölçekte" çalıştığı için anchor düzeltmesi:
+            // Scroll offsetleri
             double offX = GraphScroll.HorizontalOffset;
             double offY = GraphScroll.VerticalOffset;
 
@@ -1109,7 +1092,7 @@ namespace SocialNetworkAnalyzer.App
             ShowStatus($"Zoom: {(newScale * 100):0}% (Ctrl+Scroll)", false);
         }
 
-        // ===================== EDGE CRUD =====================
+        // EDGE CRUD
         private void BtnAddEdge_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -1286,7 +1269,7 @@ namespace SocialNetworkAnalyzer.App
 
         private bool TryGetStartNode(out int startId)
         {
-            // TextBox doluysa onu kullan
+            // TextBox doluysa onu
             if (!string.IsNullOrWhiteSpace(InStartNodeId.Text) &&
                 int.TryParse(InStartNodeId.Text.Trim(), out startId))
                 return true;
@@ -1325,11 +1308,9 @@ namespace SocialNetworkAnalyzer.App
             }
         }
 
-        private void BtnBfs_Click(object sender, RoutedEventArgs e)
-            => RunTraversal("BFS", Traversals.BFS);
+        private void BtnBfs_Click(object sender, RoutedEventArgs e) => RunTraversal("BFS", Traversals.BFS);
 
-        private void BtnDfs_Click(object sender, RoutedEventArgs e)
-            => RunTraversal("DFS", Traversals.DFS);
+        private void BtnDfs_Click(object sender, RoutedEventArgs e) => RunTraversal("DFS", Traversals.DFS);
 
         private void BtnClearHighlight_Click(object sender, RoutedEventArgs e)
         {

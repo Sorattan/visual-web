@@ -6,7 +6,7 @@ namespace SocialNetworkAnalyzer.Core.Algorithms;
 
 public static class Centrality
 {
-    // Degree centrality (normalize edilmiş): degree / (n-1)
+    // Degree centrality (normalize): degree / (n-1)
     public static List<(int NodeId, int Degree, double Score)> DegreeCentrality(Graph graph)
     {
         int n = graph.Nodes.Count;

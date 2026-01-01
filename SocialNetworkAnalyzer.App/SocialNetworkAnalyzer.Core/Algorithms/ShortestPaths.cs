@@ -31,7 +31,6 @@ public static class ShortestPaths
 
         dist[startId] = 0;
 
-        // .NET 6+ PriorityQueue var
         var pq = new PriorityQueue<int, double>();
         pq.Enqueue(startId, 0);
 
@@ -89,9 +88,7 @@ public static class ShortestPaths
         if (!graph.Nodes.ContainsKey(targetId))
             throw new GraphValidationException($"Hedef node yok: {targetId}");
 
-        // Heuristic'i "admissible" tutmak için küçük ölçekli kullanacağız:
         // h(n) = (EuclidDistance(n, target) / diagonal) * minEdgeWeight
-        // Böylece h her zaman gerçek kalan maliyetten büyük olmaz (en kötü ihtimalle Dijkstra'ya yaklaşır).
         double minEdgeWeight = double.PositiveInfinity;
         foreach (var e in graph.Edges)
         {

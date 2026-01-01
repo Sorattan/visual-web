@@ -12,7 +12,7 @@ namespace SocialNetworkAnalyzer.Core.IO;
 
 public static class GraphIO
 {
-    // ---------------- JSON ----------------
+    // JSON
     private sealed class GraphDto
     {
         public List<NodeDto> Nodes { get; set; } = new();
@@ -70,10 +70,8 @@ public static class GraphIO
         return g;
     }
 
-    // ---------------- CSV (isterdeki tablo formatına uyumlu) ----------------
-    // Beklenen kolonlar:
+    // CSV
     // DugumId  Ozellik_I(Aktiflik)  Ozellik_II(Etkilesim)  Ozellik_III(BaglantiSayisi)  Komsular
-    // Örn: 1 0.8 12 3 2,4,5  (boşluklarla ayrılmış):contentReference[oaicite:3]{index=3}
     public static void SaveCsv(string path, Graph graph)
     {
         var sb = new StringBuilder();
@@ -85,7 +83,6 @@ public static class GraphIO
             var neighbors = graph.GetNeighbors(id).OrderBy(x => x).ToList();
             var deg = neighbors.Count;
 
-            // InvariantCulture ile nokta kullanır (0.8 gibi)
             sb.Append(id).Append(' ')
               .Append(n.Activity.ToString(CultureInfo.InvariantCulture)).Append(' ')
               .Append(n.Interaction.ToString(CultureInfo.InvariantCulture)).Append(' ')
@@ -106,13 +103,12 @@ public static class GraphIO
 
         if (lines.Count == 0) throw new InvalidDataException("CSV boş.");
 
-        // İlk satır header olabilir: sayıyla başlamıyorsa atla
         int start = 0;
         if (!char.IsDigit(lines[0][0])) start = 1;
 
         var g = new Graph();
 
-        // 1) Node’ları ekle
+        // Node’ları ekle
         var neighborMap = new Dictionary<int, List<int>>();
 
         for (int i = start; i < lines.Count; i++)
@@ -123,7 +119,7 @@ public static class GraphIO
             int id = int.Parse(parts[0], CultureInfo.InvariantCulture);
             double act = ParseDoubleAnyCulture(parts[1]);
             double inter = ParseDoubleAnyCulture(parts[2]);
-            // parts[3] = baglanti sayisi (isterde var) ama biz komşulardan zaten hesaplıyoruz.
+            // parts[3] = bağlantı sayısı
             var neighborsRaw = parts[4];
 
             var (x, y) = positionFactory();
@@ -133,7 +129,7 @@ public static class GraphIO
             neighborMap[id] = neighbors;
         }
 
-        // 2) Edge’leri komşuluklardan kur (çift eklemeyi engellemek için id < nb)
+        // Edge’leri komşuluklardan kur
         foreach (var (id, nbs) in neighborMap)
         {
             foreach (var nb in nbs)
@@ -149,7 +145,7 @@ public static class GraphIO
         return g;
     }
 
-    // ---------------- Komşuluk Çıktıları ----------------
+    // Komşuluk Çıktıları
     public static void ExportAdjacencyList(string path, Graph graph)
     {
         var sb = new StringBuilder();
@@ -166,7 +162,7 @@ public static class GraphIO
         var ids = graph.Nodes.Keys.OrderBy(x => x).ToList();
         int n = ids.Count;
 
-        // 0/1 matrisi (büyük graflarda dosya büyür, ama ister "liste/matris" dediği için üretiyoruz):contentReference[oaicite:4]{index=4}
+        // 0/1 matrisi
         using var sw = new StreamWriter(path, false, Encoding.UTF8);
 
         // Header
@@ -194,7 +190,7 @@ public static class GraphIO
         }
     }
 
-    // ---------------- Helpers ----------------
+    // Helpers
     private static double ParseDoubleAnyCulture(string s)
     {
         s = s.Trim();
@@ -215,14 +211,14 @@ public static class GraphIO
                   .ToList();
     }
 
-    // Satır "1 0.8 12 3 2,4,5" (boşluk) veya "1,0.8,12,3,2,4,5" (virgül) gelirse yakalar.
+    // "1 0.8 12 3 2,4,5" (boşluk) veya "1,0.8,12,3,2,4,5" (virgül)
     private static List<string> SplitCsvLineSmart(string line)
     {
-        // önce whitespace ile dene (ister örneği gibi)
+        // boşluk
         var ws = line.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).ToList();
         if (ws.Count >= 5) return new List<string> { ws[0], ws[1], ws[2], ws[3], ws[4] };
 
-        // virgülle dene (komşular parçalanırsa birleştir)
+        // virgül
         var c = line.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).ToList();
         if (c.Count >= 5)
         {
@@ -234,6 +230,6 @@ public static class GraphIO
         var sc = line.Split(';', StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).ToList();
         if (sc.Count >= 5) return new List<string> { sc[0], sc[1], sc[2], sc[3], sc[4] };
 
-        return ws; // fallback
+        return ws;
     }
 }

@@ -112,10 +112,10 @@
             </Grid>
 
             <WrapPanel Margin="0,4,0,0">
-              <Button Content="Node Ekle" Width="100" Margin="0,0,8,8" Click="BtnAddNode_Click"/>
-              <Button Content="Node Güncelle" Width="110" Margin="0,0,8,8" Click="BtnUpdateNode_Click"/>
-              <Button Content="Node Sil" Width="90" Margin="0,0,8,8" Click="BtnDeleteNode_Click"/>
-              <Button Content="Örnek Graf" Width="95" Margin="0,0,8,8" Click="BtnSample_Click"/>
+              <Button Content="Node Ekle" Width="140" Margin="0,0,8,8" Click="BtnAddNode_Click"/>
+              <Button Content="Node Güncelle" Width="140" Margin="0,0,8,8" Click="BtnUpdateNode_Click"/>
+              <Button Content="Node Sil" Width="140" Margin="0,0,8,8" Click="BtnDeleteNode_Click"/>
+              <Button Content="Örnek Graf" Width="140" Margin="0,0,8,8" Click="BtnSample_Click"/>
             </WrapPanel>
 
             <Separator Margin="0,12,0,12"/>
@@ -141,8 +141,8 @@
             </Grid>
 
             <WrapPanel Margin="0,10,0,0">
-              <Button Content="Edge Ekle" Width="100" Margin="0,0,8,8" Click="BtnAddEdge_Click"/>
-              <Button Content="Edge Sil" Width="90" Margin="0,0,8,8" Click="BtnDeleteEdge_Click"/>
+              <Button Content="Edge Ekle" Width="140" Margin="0,0,8,8" Click="BtnAddEdge_Click"/>
+              <Button Content="Edge Sil" Width="140" Margin="0,0,8,8" Click="BtnDeleteEdge_Click"/>
             </WrapPanel>
 
             <Separator Margin="0,12,0,12"/>
@@ -155,35 +155,32 @@
             <TextBox x:Name="InTargetNodeId" Margin="0,2,0,8"/>
 
             <WrapPanel>
-              <Button Content="BFS Çalıştır" Width="110" Margin="0,0,8,8" Click="BtnBfs_Click"/>
-              <Button Content="DFS Çalıştır" Width="110" Margin="0,0,8,8" Click="BtnDfs_Click"/>
-              <Button Content="Degree Top-5" Width="110" Margin="0,0,8,8" Click="BtnDegreeTop5_Click"/>
-              <Button Content="Dijkstra" Width="110" Margin="0,0,8,8" Click="BtnDijkstra_Click"/>
-              <Button Content="A*" Width="110" Margin="0,0,8,8" Click="BtnAStar_Click"/>
-              <Button Content="Highlight Temizle" Width="130" Margin="0,0,8,8" Click="BtnClearHighlight_Click"/>
+              <Button Content="BFS" Width="90" Margin="0,0,8,8" Click="BtnBfs_Click"/>
+              <Button Content="DFS" Width="90" Margin="0,0,8,8" Click="BtnDfs_Click"/>
+              <Button Content="Degree Top-5" Width="90" Margin="0,0,8,8" Click="BtnDegreeTop5_Click"/>
+              <Button Content="Dijkstra" Width="90" Margin="0,0,8,8" Click="BtnDijkstra_Click"/>
+              <Button Content="A*" Width="90" Margin="0,0,8,8" Click="BtnAStar_Click"/>
+              <Button Content="Temizle" Width="90" Margin="0,0,8,8" Click="BtnClearHighlight_Click"/>
             </WrapPanel>
-
-            <Separator Margin="0,12,0,12"/>
-            <TextBlock Text="Bağlı Bileşenler (Components)" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
 
             <TextBlock Text="Sonuç (Ziyaret Sırası)" FontWeight="SemiBold" Margin="0,6,0,4"/>
             <ListBox x:Name="AlgoResultsList" Height="120"/>
 
             <Separator Margin="0,12,0,12"/>
             <WrapPanel>
-              <Button Content="Bileşenleri Bul ve Boya" Width="170" Margin="0,0,8,8" Click="BtnComponents_Click"/>
-              <Button Content="Bileşen Boyasını Temizle" Width="180" Margin="0,0,8,8" Click="BtnClearComponentColors_Click"/>
+              <Button Content="Bileşenleri Bul ve Boya" Width="140" Margin="0,0,8,8" Click="BtnComponents_Click"/>
+              <Button Content="Bileşen Boyasını Temizle" Width="140" Margin="0,0,8,8" Click="BtnClearComponentColors_Click"/>
             </WrapPanel>
 
-            <TextBlock Text="Bileşen Sonuçları" FontWeight="SemiBold" Margin="0,6,0,4"/>
+            <TextBlock Text="Sonuç" FontWeight="SemiBold" Margin="0,6,0,4"/>
             <ListBox x:Name="ComponentsResultsList" Height="140"/>
             
             <Separator Margin="0,12,0,12"/>
             <TextBlock Text="Graph Coloring (Welsh–Powell)" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
 
             <WrapPanel>
-              <Button Content="Welsh–Powell Boya" Width="150" Margin="0,0,8,8" Click="BtnWelshPowell_Click"/>
-              <Button Content="Boyayı Temizle" Width="120" Margin="0,0,8,8" Click="BtnClearColoring_Click"/>
+              <Button Content="Welsh–Powell Boya" Width="140" Margin="0,0,8,8" Click="BtnWelshPowell_Click"/>
+              <Button Content="Boyayı Temizle" Width="140" Margin="0,0,8,8" Click="BtnClearColoring_Click"/>
             </WrapPanel>
 
             <TextBlock Text="Boyama Sonuçları (Node → Color)" FontWeight="SemiBold" Margin="0,6,0,4"/>
@@ -200,25 +197,25 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Margin="0,0,6,0">
-                    <TextBlock Text="N (Node)"/>
+                    <TextBlock Text="Node"/>
                     <TextBox x:Name="InPerfN" Text="50" Margin="0,2,0,0"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="0,0,6,0">
-                    <TextBlock Text="E (Edge)"/>
+                    <TextBlock Text="Edge"/>
                     <TextBox x:Name="InPerfE" Text="120" Margin="0,2,0,0"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2">
-                    <TextBlock Text="Seed (ops.)"/>
+                    <TextBlock Text="Seed"/>
                     <TextBox x:Name="InPerfSeed" Margin="0,2,0,0"/>
                 </StackPanel>
             </Grid>
 
             <WrapPanel Margin="0,0,0,8">
-                <Button Content="Rastgele Graf Üret" Width="150" Margin="0,0,8,8" Click="BtnGeneratePerfGraph_Click"/>
+                <Button Content="Rastgele Graf Üret" Width="140" Margin="0,0,8,8" Click="BtnGeneratePerfGraph_Click"/>
                 <Button Content="Benchmark Çalıştır" Width="140" Margin="0,0,8,8" Click="BtnRunBenchmark_Click"/>
-                <Button Content="Benchmark CSV Kaydet" Width="170" Margin="0,0,8,8" Click="BtnExportBenchmarkCsv_Click"/>
+                <Button Content="Benchmark CSV Kaydet" Width="140" Margin="0,0,8,8" Click="BtnExportBenchmarkCsv_Click"/>
             </WrapPanel>
 
             <DataGrid x:Name="PerfResultsGrid" Height="230"
@@ -237,14 +234,14 @@
             <TextBlock Text="Veri İçe / Dışa Aktarma" FontSize="16" FontWeight="Bold" Margin="0,0,0,6"/>
 
             <WrapPanel Margin="0,6,0,0">
-              <Button Content="CSV İçe Aktar" Width="120" Margin="0,0,8,8" Click="BtnImportCsv_Click"/>
-              <Button Content="JSON İçe Aktar" Width="120" Margin="0,0,8,8" Click="BtnImportJson_Click"/>
+              <Button Content="CSV İçe Aktar" Width="140" Margin="0,0,8,8" Click="BtnImportCsv_Click"/>
+              <Button Content="JSON İçe Aktar" Width="140" Margin="0,0,8,8" Click="BtnImportJson_Click"/>
 
-              <Button Content="CSV Dışa Aktar" Width="120" Margin="0,0,8,8" Click="BtnExportCsv_Click"/>
-              <Button Content="JSON Dışa Aktar" Width="120" Margin="0,0,8,8" Click="BtnExportJson_Click"/>
+              <Button Content="CSV Dışa Aktar" Width="140" Margin="0,0,8,8" Click="BtnExportCsv_Click"/>
+              <Button Content="JSON Dışa Aktar" Width="140" Margin="0,0,8,8" Click="BtnExportJson_Click"/>
 
-              <Button Content="Komşuluk Listesi" Width="130" Margin="0,0,8,8" Click="BtnExportAdjList_Click"/>
-              <Button Content="Komşuluk Matrisi" Width="130" Margin="0,0,8,8" Click="BtnExportAdjMatrix_Click"/>
+              <Button Content="Komşuluk Listesi" Width="140" Margin="0,0,8,8" Click="BtnExportAdjList_Click"/>
+              <Button Content="Komşuluk Matrisi" Width="140" Margin="0,0,8,8" Click="BtnExportAdjMatrix_Click"/>
             </WrapPanel>
 
           </StackPanel>
