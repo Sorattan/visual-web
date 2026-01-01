@@ -15,7 +15,7 @@ WPF tabanlı bir sosyal ağ analiz uygulaması. Kullanıcı arayüzünde graf g�
   - `IO/` (GraphIO: CSV/JSON import-export, adjacency list/matrix)
 - **SocialNetworkAnalyzer.App**
   - WPF UI (`MainWindow.xaml`, `MainWindow.xaml.cs`)
-<img width="4035" height="3255" alt="Mimari" src="https://github.com/user-attachments/assets/de2ef1cf-5e48-4a73-9be5-c07430876d76" />
+<img width="4035" height="3255" alt="Mimari" src="https://github.com/user-attachments/assets/f905f9d8-e0c9-4840-bb80-6f9b0fb4740f" />
 
 ## Özellikler
 
