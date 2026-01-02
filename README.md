@@ -159,18 +159,22 @@ WPF tabanlı bir sosyal ağ analiz uygulaması. Kullanıcı arayüzünde graf g�
 2. `SocialNetworkAnalyzer.App` projesini **Startup Project** yap.
 3. `F5` ile çalıştır.
 
+### Kolay Çalıştırma 
+1. [exe.zip](exe.zip?raw=true) dosyasını indir, ayıkla.
+2. `SocialNetworkAnalyzer.App.exe` dosyasını çalıştır.
+
 ## CSV Formatı
 
-Başlık örneği:
+Çıktı Formatı:
 DugumId Ozellik_I Ozellik_II Ozellik_III Komsular
-
-Satır örneği:
-1 0.8 12 3 2,4,5
 
 - `Ozellik_I`: Activity
 - `Ozellik_II`: Interaction
 - `Ozellik_III`: Bağlantı sayısı (degree)
 - `Komsular`: Virgülle ayrılmış komşu id’leri
+
+Çıktı Örneği:
+1 0.8 12 3 2,4,5
 
 ## JSON Formatı
 
